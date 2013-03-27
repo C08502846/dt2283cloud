@@ -10,6 +10,7 @@ import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 
+@SuppressWarnings("serial")
 public class Serve extends HttpServlet
 {
 	private BlobstoreService blobstoreService = 
@@ -21,6 +22,7 @@ throws IOException
     {
         BlobKey blobKey = new BlobKey(req.getParameter("blob-key"));
         blobstoreService.serve(blobKey, res);
+        
     }
 }
 

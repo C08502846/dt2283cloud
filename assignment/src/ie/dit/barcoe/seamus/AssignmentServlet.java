@@ -25,21 +25,25 @@ public class AssignmentServlet extends HttpServlet
 		String thisURL = req.getRequestURI();
 		String loginURL = userService.createLoginURL(thisURL);
 		String logoutURL = userService.createLogoutURL(thisURL);
+		String successLogin = "index.jsp";
 		resp.setContentType("text/html");
 		
 		if(myPrincipal == null) 
 		{
-		    resp.getWriter().println("<p>You are not currently logged in</p>");
+			
+		    resp.getWriter().println("<center><p> You are not currently logged in</p>");
 		    resp.getWriter().println("<p>You can <a href=\""+loginURL+
-		    "\">sign in here</a>.</p>");
+		    "\">sign in here</a>.</p></center>");
 		} // end if not logged in
 		
 		if(myPrincipal !=null) 
 		{
 		    emailAddress = myPrincipal.getName();
-		    resp.getWriter().println("<p>You are Logged in as (email): "+emailAddress+"</p>");
+		    resp.getWriter().println("<center><p>You are Logged in as (email): "+emailAddress+"</p>");
 		    resp.getWriter().println("<p>You can <a href=\"" + logoutURL +
-		    "\">sign out</a>.</p>");
+		    "\">sign out</a>.</p></center> ");
+		    resp.sendRedirect(successLogin);
+		    //redirect to Upload Servlet
 		} // end if logged in
 	}
 }
