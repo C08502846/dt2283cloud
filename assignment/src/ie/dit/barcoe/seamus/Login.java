@@ -11,7 +11,7 @@ import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
 @SuppressWarnings("serial")
-public class AssignmentServlet extends HttpServlet 
+public class Login extends HttpServlet 
 
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -28,16 +28,26 @@ public class AssignmentServlet extends HttpServlet
 		String successLogin = "index.jsp";
 		resp.setContentType("text/html");
 		
-		if(myPrincipal == null) 
-		{
-			
+		//increase wait time after testing
+				
+		
+		if(myPrincipal == null)
+		{			
 		    resp.getWriter().println("<center><p> You are not currently logged in</p>");
 		    resp.getWriter().println("<p>You can <a href=\""+loginURL+
 		    "\">sign in here</a>.</p></center>");
+		    
 		} // end if not logged in
 		
-		if(myPrincipal !=null) 
+		if(myPrincipal != null) 
 		{
+			if (req.getUserPrincipal() != null) 
+			{
+				resp.getWriter().println("<p>You need to be signed in to use this google app <a href=\""
+								+ userService.createLoginURL(thisURL)
+								+ "\">sign in</a>.</p>");
+				}
+			
 		    emailAddress = myPrincipal.getName();
 		    resp.getWriter().println("<center><p>You are Logged in as (email): "+emailAddress+"</p>");
 		    resp.getWriter().println("<p>You can <a href=\"" + logoutURL +

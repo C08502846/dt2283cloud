@@ -26,6 +26,7 @@ public class Logout extends HttpServlet
 		String loginURL = userService.createLoginURL(thisURL);
 		String logoutURL = userService.createLogoutURL(thisURL);
 		String successLogin = "index.jsp";
+		String successLogout = "logout.jsp";
 		resp.setContentType("text/html");
 		
 		if(myPrincipal == null) 
@@ -38,12 +39,7 @@ public class Logout extends HttpServlet
 		
 		if(myPrincipal != null) 
 		{
-		    emailAddress = myPrincipal.getName();
-		    resp.getWriter().println("<center><p>You are Logged in as (email): "+emailAddress+"</p>");
-		    resp.getWriter().println("<p>You can <a href=\"" + logoutURL +
-		    "\">sign out</a>.</p></center> ");
-		    resp.sendRedirect(successLogin);
-		    //redirect to Upload Servlet
+		    resp.sendRedirect(successLogout);
 		} // end if logged in
 	}
 }

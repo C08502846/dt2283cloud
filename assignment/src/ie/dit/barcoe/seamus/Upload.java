@@ -25,6 +25,7 @@ public class Upload extends HttpServlet
 		        @SuppressWarnings("deprecation")
 		        Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
 		        BlobKey blobKey = blobs.get("myFile");
+		        
 		        if (blobKey == null) 
 		        {
 		        	res.sendRedirect("/");

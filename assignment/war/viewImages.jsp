@@ -8,10 +8,10 @@
     <body>
     <center>
     <img src="picturebox.jpg" alt="title" >
-    <h1>Welcome to Picture Box</h1>
+    <h1>Uploaded Images:</h1>
             <table>
                 <tr>
-                    <td><a href="login">Click here to login</a></td>
+                    <td><a href="login">Click here to whatever</a></td>
                 </tr>
              </table>
              
