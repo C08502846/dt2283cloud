@@ -28,6 +28,12 @@
             <input type="text" name="foo">
             <input type="file" name="myFile">
             <input type="submit" value="Submit">
+            <center>Leave a comment below</center>
+            <form action="/upload" method="post">
+            <div><textarea name="content" rows="3" cols="50"></textarea></div>
+            <div><input type="submit" value="Post Comment" /></div>
+            </form>
+            
             <table>
                 <tr>
                     <td><p>Hello, ${fn:escapeXml(user.nickname)}! 
