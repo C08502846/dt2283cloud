@@ -41,18 +41,12 @@ public class Login extends HttpServlet
 		
 		if(myPrincipal != null) 
 		{
-			if (req.getUserPrincipal() != null) 
-			{
-				resp.getWriter().println("<p>You need to be signed in to use this google app <a href=\""
-								+ userService.createLoginURL(thisURL)
-								+ "\">sign in</a>.</p>");
-				}
-			
-		    emailAddress = myPrincipal.getName();
+			emailAddress = myPrincipal.getName();
 		    resp.getWriter().println("<center><p>You are Logged in as (email): "+emailAddress+"</p>");
 		    resp.getWriter().println("<p>You can <a href=\"" + logoutURL +
 		    "\">sign out</a>.</p></center> ");
 		    resp.sendRedirect(successLogin);
+		    
 		    //redirect to Upload Servlet
 		} // end if logged in
 	}
