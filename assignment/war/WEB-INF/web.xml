@@ -11,10 +11,6 @@
 		<servlet-name>Serve</servlet-name>
 		<servlet-class>ie.dit.barcoe.seamus.Serve</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>Logout</servlet-name>
-		<servlet-class>ie.dit.barcoe.seamus.Logout</servlet-class>
-	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/login</url-pattern>
@@ -26,12 +22,7 @@
 	<servlet-mapping>
 		<servlet-name>Serve</servlet-name>
 		<url-pattern>/serve</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Logout</servlet-name>
-		<url-pattern>/logout</url-pattern>
-	</servlet-mapping>
-	
+	</servlet-mapping>	
 	<servlet>
         <servlet-name>index</servlet-name>
         <jsp-file>/index.jsp</jsp-file>
@@ -40,18 +31,7 @@
     <servlet>
         <servlet-name>login</servlet-name>
         <jsp-file>/login.jsp</jsp-file>
-    </servlet>
-    
-    <servlet>
-        <servlet-name>logout</servlet-name>
-        <jsp-file>/logout.jsp</jsp-file>
-    </servlet>
-    
-    <servlet>
-        <servlet-name>viewImages</servlet-name>
-        <jsp-file>/viewImages.jsp</jsp-file>
-    </servlet>
-
+    </servlet>  
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -60,14 +40,6 @@
     <servlet-mapping>
         <servlet-name>login</servlet-name>
         <url-pattern>/login2</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>logout</servlet-name>
-        <url-pattern>/logout</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>viewImages</servlet-name>
-        <url-pattern>/viewImages</url-pattern>
     </servlet-mapping>
     
     <security-constraint>
