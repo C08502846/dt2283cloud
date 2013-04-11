@@ -39,7 +39,7 @@
 
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService(); // Create a new datastore service to provide storage for our images
 		Key uploadImageKey = KeyFactory.createKey("image", uploadImageFoo); // Create a primary Key for our datastore Entity
-		Query ImageQuery = new Query("UploadImage", uploadImageKey).addSort("date", Query.SortDirection.DESCENDING); // A Query for creating one or more entity objects from our datastore
+		Query ImageQuery = new Query("UploadImage", uploadImageKey).addSort("date", Query.SortDirection.DESCENDING); // A Query which sorts our images by descending order
 		List<Entity> UploadImageEntitys = datastore.prepare(ImageQuery).asList(FetchOptions.Builder.withLimit(5)); // Create a collection of image entities
 
 		if (UploadImageEntitys.isEmpty() == true) // If we have no images there is nothing to display
