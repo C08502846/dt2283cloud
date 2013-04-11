@@ -1,3 +1,0 @@
-<datastore-index kind="UploadImage" ancestor="true" source="manual">
-        <property name="date" direction="desc"/>
-    </datastore-index>
